@@ -11,12 +11,41 @@
         </ul>
 
         <div class="pagButtons f16 uppercase primary">
-            <button class="currentPageButton">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>></button>
-            <button class="textButton">Last page</button>
+            @if ($currentPage != 1)
+                @include('layouts.paggination.text_paggination_button', [
+                    'text' => 'First page',
+                    'url' => route('news', ['page' => 1]),
+                ])
+                @include('layouts.paggination.paggination_button', [
+                    'i' => '<',
+                    'url' => route('news', ['page' => $currentPage - 1]),
+                ])
+            @endif
+
+            @for ($i = 1; $i <= $limit; $i++)
+                @if ($i == $currentPage)
+                    @include('layouts.paggination.current_paggination_button', [
+                        'i' => $i,
+                        'url' => route('news', ['page' => $i]),
+                    ])
+                @else
+                    @include('layouts.paggination.paggination_button', [
+                        'i' => $i,
+                        'url' => route('news', ['page' => $i]),
+                    ])
+                @endif
+            @endfor
+
+            @if ($currentPage != $limit)
+                @include('layouts.paggination.paggination_button', [
+                    'i' => '>',
+                    'url' => route('news', ['page' => $currentPage + 1]),
+                ])
+                @include('layouts.paggination.text_paggination_button', [
+                    'text' => 'Last page',
+                    'url' => route('news', ['page' => $limit]),
+                ])
+            @endif
         </div>
     </main>
 @endsection

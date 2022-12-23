@@ -38,15 +38,13 @@ class PagesController extends Controller
         return view('home')->with('newsArray', $news);
     }
 
-    public function newsPage($page = 0)
+    public function newsPage($page = 1)
     {
-        $newsPerPage = 2;
-
         $news = [
             new News(
                 'Rotting Christ TV',
                 '15/01/2022',
-                'media',
+                '1',
                 'Today we celebrate the 15 years of our official ROTTING CHRIST TV channel in Youtube!A channel that updates you with all the audio and video official releases of the band and provide you everything free of charge.',
                 asset('img/news/tv.jpg'),
                 ''
@@ -54,7 +52,7 @@ class PagesController extends Controller
             new News(
                 'Sleep of the Angels 23 years ago',
                 '04/01/2022',
-                'album',
+                '2',
                 '23 years today since the release of our "Sleep of the Angels"!',
                 asset('img/news/angel.jpg'),
                 ''
@@ -62,7 +60,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '3',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -70,7 +68,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '4',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -78,7 +76,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '5',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -86,7 +84,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '6',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -94,7 +92,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '7',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -102,7 +100,7 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '8',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
@@ -110,16 +108,22 @@ class PagesController extends Controller
             new News(
                 'Rotting Christ on Tour',
                 '06/12/2021',
-                'tour',
+                '9',
                 'Thank you Finlandia for a great response to our show.',
                 asset('img/news/tour.jpg'),
                 ''
             ),
         ];
 
-        $pageNews = array_slice($news, $newsPerPage * $page, $newsPerPage * $page + $newsPerPage);
+        $newsPerPage = 2;
+        $startIndex = ($page - 1) * $newsPerPage;
+        $numberOfPages = ceil(count($news) / $newsPerPage);
+        $pageNews = array_slice($news, $startIndex, $newsPerPage);
 
-        return view('news')->with('newsArray', $pageNews)->with('page', $page);
+        return view('news')
+            ->with('newsArray', $pageNews)
+            ->with('currentPage', $page)
+            ->with('limit', $numberOfPages);
     }
 }
 
