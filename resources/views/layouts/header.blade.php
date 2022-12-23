@@ -17,7 +17,7 @@
             <img class="logo" src="{{ asset('img/Logo.png') }}">
         </a>
         <nav class="fancy">
-            <a href="{{ route('news') }}">News</a>
+            <a href="{{ route('newsListPage') }}">News</a>
             <a>Tours</a>
             <a>The Band</a>
             <a>Discography</a>

@@ -16,4 +16,6 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, 'homePage'])->name('home');
 
-Route::get('/news/{page?}', [PagesController::class, 'newsPage'])->where('page', '[0-9]+')->name('news');
+Route::get('/news_page', [PagesController::class, 'newsPage'])->name('newsPage');
+
+Route::get('/news/{page?}', [PagesController::class, 'newsListPage'])->where('page', '[0-9]+')->name('newsListPage');

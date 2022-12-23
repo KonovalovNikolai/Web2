@@ -6,5 +6,5 @@
     <span class="cardDescription f20">
         {{ $news->body }}
     </span>
-    <a href="{{ $news->url }}" class="cardButton f16 primary uppercase underline">More...</a>
+    <a href="{{ route("newsPage") }}" class="cardButton f16 primary uppercase underline">More...</a>
 </div>

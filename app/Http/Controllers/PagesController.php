@@ -38,7 +38,7 @@ class PagesController extends Controller
         return view('home')->with('newsArray', $news);
     }
 
-    public function newsPage($page = 1)
+    public function newsListPage($page = 1)
     {
         $news = [
             new News(
@@ -124,6 +124,10 @@ class PagesController extends Controller
             ->with('newsArray', $pageNews)
             ->with('currentPage', $page)
             ->with('limit', $numberOfPages);
+    }
+
+    public function newsPage() {
+        return view('news_page');
     }
 }
 

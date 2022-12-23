@@ -14,11 +14,11 @@
             @if ($currentPage != 1)
                 @include('layouts.paggination.text_paggination_button', [
                     'text' => 'First page',
-                    'url' => route('news', ['page' => 1]),
+                    'url' => route('newsListPage', ['page' => 1]),
                 ])
                 @include('layouts.paggination.paggination_button', [
                     'i' => '<',
-                    'url' => route('news', ['page' => $currentPage - 1]),
+                    'url' => route('newsListPage', ['page' => $currentPage - 1]),
                 ])
             @endif
 
@@ -26,12 +26,12 @@
                 @if ($i == $currentPage)
                     @include('layouts.paggination.current_paggination_button', [
                         'i' => $i,
-                        'url' => route('news', ['page' => $i]),
+                        'url' => route('newsListPage', ['page' => $i]),
                     ])
                 @else
                     @include('layouts.paggination.paggination_button', [
                         'i' => $i,
-                        'url' => route('news', ['page' => $i]),
+                        'url' => route('newsListPage', ['page' => $i]),
                     ])
                 @endif
             @endfor
@@ -39,11 +39,11 @@
             @if ($currentPage != $limit)
                 @include('layouts.paggination.paggination_button', [
                     'i' => '>',
-                    'url' => route('news', ['page' => $currentPage + 1]),
+                    'url' => route('newsListPage', ['page' => $currentPage + 1]),
                 ])
                 @include('layouts.paggination.text_paggination_button', [
                     'text' => 'Last page',
-                    'url' => route('news', ['page' => $limit]),
+                    'url' => route('newsListPage', ['page' => $limit]),
                 ])
             @endif
         </div>

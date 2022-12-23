@@ -21,9 +21,8 @@
 
 <body>
     @include('layouts/header')
-    <main>
-        @yield('content')
-    </main>
+
+    @yield('content')
 
     @include('layouts/footer')
 
