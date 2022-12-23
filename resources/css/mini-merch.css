@@ -1,0 +1,41 @@
+@media (max-device-width: 750px) {
+    .itemShopContent {
+        display: block;
+    }
+
+    /* .itemShopContent * {
+        border: 1px solid pink;
+    } */
+
+    .itemShopContent img {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+
+
+    .galleryImgs img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .itemShopContent {
+        font-size: 3.4vw;
+    }
+
+    /* .shopBuyButton {
+        font-size: 7vw;
+        height: 80px;
+        width: 90%;
+    } */
+    .shopElements {
+        margin: 0px;
+    }
+
+    .shopElements button {
+        font-size: 7vw;
+        height: 130px;
+        width: 103%;
+    }
+}

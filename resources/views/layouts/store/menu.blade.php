@@ -28,9 +28,11 @@
         </div>
     </div>
 
+    <div class="links">
     <a>Apparel</a>
     <a>VISUALS & SOUNDS</a>
     <a>SOUVENIRS</a>
+    </div>
 
     <div class="search">
         <input id="search" type="text">

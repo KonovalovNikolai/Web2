@@ -1,0 +1,47 @@
+@media (max-device-width: 750px) {
+
+
+    .top-bar-b,
+    select,
+    option {
+        font-size: 4.2vw;
+    }
+
+    .fancy a {
+        font-size: 4vw;
+        /* border: 1px rgb(103, 231, 214) solid; */
+        align-self: center;
+        text-align: center;
+    }
+
+    .nav-bar-folded {
+        flex-wrap: wrap;
+        /* border: 1px pink solid; */
+        margin-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 15px;
+    }
+
+
+    .logo {
+        display: none;
+    }
+
+    select,
+    option {
+        margin-right: 40px;
+        margin-left: 30px;
+    }
+
+    header {
+        position: static;
+    }
+
+    main {
+        margin-top: 90px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+
+}

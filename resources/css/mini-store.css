@@ -1,0 +1,72 @@
+@media (max-device-width: 750px) {
+
+
+
+    .page-title {
+        margin-top: -80px;
+        font-size: 6vw;
+    }
+
+    .popTitle {
+        font-size: 6vw;
+    }
+
+    .itemList {
+        flex-wrap: wrap;
+
+    }
+
+    .itemCard img {
+        width: 380px;
+        height: 380px;
+    }
+
+    .itemCard p {
+        font-size: 5vw;
+    }
+
+    .itemList li {
+        border: solid 2px var(--line-color);
+        margin: 10px 15px;
+    }
+
+    .bannerContent img {
+        height: 550px;
+        width: 550px;
+    }
+
+    .dot {
+        height: 25px;
+        width: 25px;
+    }
+
+    .arrow {
+        height: 30px;
+        width: 30px;
+    }
+
+    .bannerContent a {
+        font-size: 6vw;
+    }
+
+    .bannerContent p {
+        font-size: 5vw;
+    }
+
+    /* .slideshow-container * {
+        border:1px pink solid;
+    } */
+
+    /* .bannerContentDescr {
+        margin-right: 30px;
+    } */
+
+    /* .bannerContentDescr a{
+    text-align: center;
+    height: 20xp;
+    } */
+    .Popular {
+        font-size: 6vw;
+    }
+
+}

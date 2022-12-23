@@ -5,40 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class News
-{
-    public $title;
-    public $date;
-    public $tag;
-    public $body;
-    public $img;
-    public $url;
-
-    public function __construct($title, $date, $tag, $body, $img, $url)
-    {
-        $this->title = $title;
-        $this->date = $date;
-        $this->tag = $tag;
-        $this->body = $body;
-        $this->img = $img;
-        $this->url = $url;
-    }
-}
-
-class StoreItem
-{
-    public $name;
-    public $cost;
-    public $img;
-
-    public function __construct($name, $cost, $img)
-    {
-        $this->name = $name;
-        $this->cost = $cost;
-        $this->img = $img;
-    }
-}
-
 class HomeController extends Controller
 {
     public function index()

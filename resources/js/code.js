@@ -1,4 +1,4 @@
-window.initModal = function(modal, button) {
+window.initModal = function (modal, button) {
     let isHidden = true;
 
     button.onclick = () => {
@@ -16,36 +16,42 @@ window.initModal = function(modal, button) {
             modal.classList.add("hidden");
         }
     });
-}
+};
 
-window.initHeaderFolder =  function(header, offset = 20) {
+window.initHeaderFolder = function (header, offset = 20) {
     const callback = () => {
-        if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+        if (window.screen.width > 750) {
+            if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+                header.classList.replace("nav-bar", "nav-bar-folded");
+                header.classList.replace("f32", "f20");
+            }
+            else {
+                header.classList.replace("nav-bar-folded", "nav-bar");
+                header.classList.replace("f20", "f32");
+            }
+        }
+        else {
             header.classList.replace("nav-bar", "nav-bar-folded");
             header.classList.replace("f32", "f20");
         }
-        else {
-            header.classList.replace("nav-bar-folded", "nav-bar");
-            header.classList.replace("f20", "f32");
-        }
-    }
+    };
 
     callback();
 
     window.addEventListener("scroll", callback);
-}
+};
 
 window.slideIndex = 1;
 
-window.plusSlides = function(n) {
+window.plusSlides = function (n) {
     showSlides(window.slideIndex += n);
-}
+};
 
-window.currentSlide = function(n) {
+window.currentSlide = function (n) {
     showSlides(window.slideIndex = n);
-}
+};
 
-window.showSlides = function(n) {
+window.showSlides = function (n) {
     var i;
     var slides = document.getElementsByClassName("slide");
     var dots = document.getElementsByClassName("dot");
@@ -65,7 +71,7 @@ window.showSlides = function(n) {
     slides[window.slideIndex - 1].classList.remove("hidden");
     dots[window.slideIndex - 1].classList.add("active");
 
-}
+};
 
 window.initMenu = function (menu, button) {
     menu.classList.add("hidden");
@@ -98,4 +104,4 @@ window.initMenu = function (menu, button) {
 
         isActive = true;
     };
-}
+};

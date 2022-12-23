@@ -2126,12 +2126,17 @@ window.initModal = function (modal, button) {
 window.initHeaderFolder = function (header) {
   var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
   var callback = function callback() {
-    if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+    if (window.screen.width > 750) {
+      if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+        header.classList.replace("nav-bar", "nav-bar-folded");
+        header.classList.replace("f32", "f20");
+      } else {
+        header.classList.replace("nav-bar-folded", "nav-bar");
+        header.classList.replace("f20", "f32");
+      }
+    } else {
       header.classList.replace("nav-bar", "nav-bar-folded");
       header.classList.replace("f32", "f20");
-    } else {
-      header.classList.replace("nav-bar-folded", "nav-bar");
-      header.classList.replace("f20", "f32");
     }
   };
   callback();

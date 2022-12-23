@@ -1,0 +1,45 @@
+@media (max-device-width: 750px) {
+    /* body {
+        background-color: #a03737;
+    } */
+
+
+
+
+
+
+
+    /* .modal-content {
+        width: 95%;
+        padding: 15px 15px;
+
+    } */
+
+
+
+    .singin-form .field>input[type=email],
+    input[type=password],
+    input[type=text] {
+        font-size: 6vw;
+    }
+
+    .modal-content p {
+        font-size: 6vw;
+    }
+
+    .modal-content label {
+        font-size: 5vw;
+    }
+
+    .singin-form a {
+        font-size: 4vw;
+    }
+
+
+    .singin-form input[type=submit] {
+        font-size: 7vw;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+}

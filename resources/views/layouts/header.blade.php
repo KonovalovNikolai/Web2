@@ -31,7 +31,7 @@
         <nav class="fancy">
             <a href="{{ route('newsListPage') }}">News</a>
             <a>Tours</a>
-            <a>The Band</a>
+            {{-- <a>The Band</a> --}}
             <a>Discography</a>
             <a href="{{ route('store') }}">Store</a>
         </nav>
