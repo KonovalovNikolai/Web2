@@ -2,16 +2,11 @@
 
 namespace App\Models;
 
-class StoreItem {
-    public $name;
-    public $cost;
-    public $img;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-    public function __construct($name, $cost, $img) {
-    	$this->name = $name;
-    	$this->cost = $cost;
-    	$this->img = $img;
-    }
+class StoreItem extends Model
+{
+    use HasFactory;
+    public $timestamps = false;
 }
-
-?>

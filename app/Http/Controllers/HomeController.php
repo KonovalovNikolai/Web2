@@ -3,127 +3,70 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
-use App\Models\StoreItem;
+use Illuminate\Support\Facades\DB;
+
+class News
+{
+    public $title;
+    public $date;
+    public $tag;
+    public $body;
+    public $img;
+    public $url;
+
+    public function __construct($title, $date, $tag, $body, $img, $url)
+    {
+        $this->title = $title;
+        $this->date = $date;
+        $this->tag = $tag;
+        $this->body = $body;
+        $this->img = $img;
+        $this->url = $url;
+    }
+}
+
+class StoreItem
+{
+    public $name;
+    public $cost;
+    public $img;
+
+    public function __construct($name, $cost, $img)
+    {
+        $this->name = $name;
+        $this->cost = $cost;
+        $this->img = $img;
+    }
+}
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $news = [
-            new News(
-                'Rotting Christ TV',
-                '15/01/2022',
-                'media',
-                'Today we celebrate the 15 years of our official ROTTING CHRIST TV channel in Youtube!A channel that updates you with all the audio and video official releases of the band and provide you everything free of charge.',
-                asset('img/news/tv.jpg'),
-                ''
-            ),
-            new News(
-                'Sleep of the Angels 23 years ago',
-                '04/01/2022',
-                'album',
-                '23 years today since the release of our "Sleep of the Angels"!',
-                asset('img/news/angel.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                'tour',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-        ];
+        $news = DB::table('news')
+            ->orderBy('date')
+            ->limit(3)
+            ->get();
 
         return view('index')->with('newsArray', $news);
     }
 
     public function newsListPage($page = 1)
     {
-        $news = [
-            new News(
-                'Rotting Christ TV',
-                '15/01/2022',
-                '1',
-                'Today we celebrate the 15 years of our official ROTTING CHRIST TV channel in Youtube!A channel that updates you with all the audio and video official releases of the band and provide you everything free of charge.',
-                asset('img/news/tv.jpg'),
-                ''
-            ),
-            new News(
-                'Sleep of the Angels 23 years ago',
-                '04/01/2022',
-                '2',
-                '23 years today since the release of our "Sleep of the Angels"!',
-                asset('img/news/angel.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '3',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '4',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '5',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '6',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '7',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '8',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-            new News(
-                'Rotting Christ on Tour',
-                '06/12/2021',
-                '9',
-                'Thank you Finlandia for a great response to our show.',
-                asset('img/news/tour.jpg'),
-                ''
-            ),
-        ];
-
-        $newsPerPage = 2;
+        $newsPerPage = 5;
         $startIndex = ($page - 1) * $newsPerPage;
-        $numberOfPages = ceil(count($news) / $newsPerPage);
-        $pageNews = array_slice($news, $startIndex, $newsPerPage);
+
+        $numberOfPages = ceil(DB::table('news')->count() / $newsPerPage);
+
+        $news = DB::table('news')
+            ->orderBy('date')
+            ->skip($startIndex)
+            ->limit($newsPerPage)
+            ->get();
+
 
         return view('news')
-            ->with('newsArray', $pageNews)
+            ->with('newsArray', $news)
             ->with('currentPage', $page)
             ->with('limit', $numberOfPages);
     }
@@ -135,13 +78,7 @@ class HomeController extends Controller
 
     public function storePage()
     {
-        $itemLists = [
-            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
-            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
-            new StoreItem("'666' Long", 3999, asset('img/store/list/long.png')),
-            new StoreItem("'666' Long", 3999, asset('img/store/list/long.png')),
-            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
-        ];
+        $itemLists  = DB::table('store_items')->get();
 
         return view('store')->with('itemList', $itemLists);
     }

@@ -1,5 +1,5 @@
 <div class="newsCard secondary">
-    <img src="{{ $news->img }}" alt="" class="cardImg">
+    <img src="{{ asset($news->img) }}" alt="" class="cardImg">
     <span class="cardTitle f24 primary uppercase">{{ $news->title }}</span>
     <span class="tag">#{{ $news->tag }}</span>
     <span class="cardData f14 italic">{{ $news->date }}</span>
