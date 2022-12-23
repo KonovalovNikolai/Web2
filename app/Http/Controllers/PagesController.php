@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\StoreItem;
 
 class PagesController extends Controller
 {
@@ -128,6 +129,18 @@ class PagesController extends Controller
 
     public function newsPage() {
         return view('news_page');
+    }
+
+    public function store() {
+        $itemLists = [
+            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
+            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
+            new StoreItem("'666' Long", 3999, asset('img/store/list/long.png')),
+            new StoreItem("'666' Long", 3999, asset('img/store/list/long.png')),
+            new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
+        ];
+
+        return view('store')->with('itemList', $itemLists);
     }
 }
 

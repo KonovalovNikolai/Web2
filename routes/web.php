@@ -19,3 +19,5 @@ Route::get('/', [PagesController::class, 'homePage'])->name('home');
 Route::get('/news_page', [PagesController::class, 'newsPage'])->name('newsPage');
 
 Route::get('/news/{page?}', [PagesController::class, 'newsListPage'])->where('page', '[0-9]+')->name('newsListPage');
+
+Route::get('/store', [PagesController::class, 'store'])->name('store');

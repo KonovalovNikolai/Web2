@@ -21,7 +21,7 @@
             <a>Tours</a>
             <a>The Band</a>
             <a>Discography</a>
-            <a href="store.html">Store</a>
+            <a href="{{ route('store') }}">Store</a>
         </nav>
     </div>
 </header>

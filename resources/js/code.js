@@ -35,26 +35,26 @@ window.initHeaderFolder =  function(header, offset = 20) {
     window.addEventListener("scroll", callback);
 }
 
-var slideIndex = 1;
+window.slideIndex = 1;
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+window.plusSlides = function(n) {
+    showSlides(window.slideIndex += n);
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+window.currentSlide = function(n) {
+    showSlides(window.slideIndex = n);
 }
 
-function showSlides(n) {
+window.showSlides = function(n) {
     var i;
     var slides = document.getElementsByClassName("slide");
     var dots = document.getElementsByClassName("dot");
 
     if (n > slides.length) {
-        slideIndex = 1;
+        window.slideIndex = 1;
     }
     if (n < 1) {
-        slideIndex = slides.length;
+        window.slideIndex = slides.length;
     }
     for (i = 0; i < slides.length; i++) {
         slides[i].classList.add("hidden");
@@ -62,12 +62,12 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace("active", "");
     }
-    slides[slideIndex - 1].classList.remove("hidden");
-    dots[slideIndex - 1].classList.add("active");
+    slides[window.slideIndex - 1].classList.remove("hidden");
+    dots[window.slideIndex - 1].classList.add("active");
 
 }
 
-function initMenu(menu, button) {
+window.initMenu = function (menu, button) {
     menu.classList.add("hidden");
 
     let isActive = false;

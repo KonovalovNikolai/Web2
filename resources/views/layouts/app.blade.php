@@ -3,6 +3,8 @@
 <html>
 
 <head>
+    <title>{{ $page_title ?? 'Rotting Christ' }}</title>
+
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,9 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&family=IM+Fell+DW+Pica+SC&display=swap"
         rel="stylesheet">
 
-    <!-- Иконки -->
+     <!-- Иконки -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
