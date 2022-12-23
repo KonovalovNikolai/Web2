@@ -131,7 +131,7 @@ class PagesController extends Controller
         return view('news_page');
     }
 
-    public function store() {
+    public function storePage() {
         $itemLists = [
             new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
             new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
@@ -141,6 +141,10 @@ class PagesController extends Controller
         ];
 
         return view('store')->with('itemList', $itemLists);
+    }
+
+    public function storeItemPage() {
+        return view('store_item');
     }
 }
 

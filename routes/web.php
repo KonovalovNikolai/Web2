@@ -20,4 +20,6 @@ Route::get('/news_page', [PagesController::class, 'newsPage'])->name('newsPage')
 
 Route::get('/news/{page?}', [PagesController::class, 'newsListPage'])->where('page', '[0-9]+')->name('newsListPage');
 
-Route::get('/store', [PagesController::class, 'store'])->name('store');
+Route::get('/store', [PagesController::class, 'storePage'])->name('store');
+
+Route::get('/store/item', [PagesController::class, 'storeItemPage'])->name('storeItem');

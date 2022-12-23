@@ -2,10 +2,10 @@
     <div class="slide fade">
         <div class="bannerContent">
             <i class="arrow left" onclick="window.plusSlides(-1)"></i>
-            <img src="img/store/666_T-Shirt_front.webp" alt="" width="350px">
+            <img src="{{ asset('img/store/666_T-Shirt_front.webp') }}" alt="" width="350px">
             <div class="bannerContentDescr">
                 <p class="uppercase">ROTTING CHRIST - 666 - T-Shirt</p>
-                <a href="merch.html" class="uppercase">BUY NOW</a>
+                <a href="{{ route('storeItem') }}" class="uppercase">BUY NOW</a>
             </div>
             <i class="arrow right" onclick="window.plusSlides(1)"></i>
         </div>
@@ -15,19 +15,19 @@
             <i class="arrow left" onclick="window.plusSlides(-1)"></i>
             <div class="bannerContentDescr">
                 <p class="uppercase">CHRIST ROTTING - 666 - T-Shirt</p>
-                <a href="merch.html" class="uppercase">BUY NOW</a>
+                <a href="{{ route('storeItem') }}" class="uppercase">BUY NOW</a>
             </div>
-            <img src="img/store/666_T-Shirt_front.webp" alt="" width="350px">
+            <img src="{{ asset('img/store/666_T-Shirt_front.webp') }}" alt="" width="350px">
             <i class="arrow right" onclick="window.plusSlides(1)"></i>
         </div>
     </div>
     <div class="slide fade hidden">
         <div class="bannerContent">
             <i class="arrow left" onclick="window.plusSlides(-1)"></i>
-            <img src="img/store/666_T-Shirt_front.webp" alt="" width="350px">
+            <img src="{{ asset('img/store/666_T-Shirt_front.webp') }}" alt="" width="350px">
             <div class="bannerContentDescr">
                 <p class="uppercase">T-Shirt</p>
-                <a href="merch.html" class="uppercase">BUY NOW</a>
+                <a href="{{ route('storeItem') }}" class="uppercase">BUY NOW</a>
             </div>
             <i class="arrow right" onclick="window.plusSlides(1)"></i>
         </div>
