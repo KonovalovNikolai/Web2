@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\StoreItem;
 
-class PagesController extends Controller
+class HomeController extends Controller
 {
-    public function homePage()
+    public function index()
     {
         $news = [
             new News(
@@ -17,7 +17,8 @@ class PagesController extends Controller
                 'media',
                 'Today we celebrate the 15 years of our official ROTTING CHRIST TV channel in Youtube!A channel that updates you with all the audio and video official releases of the band and provide you everything free of charge.',
                 asset('img/news/tv.jpg'),
-                ''),
+                ''
+            ),
             new News(
                 'Sleep of the Angels 23 years ago',
                 '04/01/2022',
@@ -36,7 +37,7 @@ class PagesController extends Controller
             ),
         ];
 
-        return view('home')->with('newsArray', $news);
+        return view('index')->with('newsArray', $news);
     }
 
     public function newsListPage($page = 1)
@@ -127,11 +128,13 @@ class PagesController extends Controller
             ->with('limit', $numberOfPages);
     }
 
-    public function newsPage() {
+    public function newsPage()
+    {
         return view('news_page');
     }
 
-    public function storePage() {
+    public function storePage()
+    {
         $itemLists = [
             new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
             new StoreItem("'666' T-SHIRT", 3999, asset('img/store/list/t-shirt.png')),
@@ -143,9 +146,8 @@ class PagesController extends Controller
         return view('store')->with('itemList', $itemLists);
     }
 
-    public function storeItemPage() {
+    public function storeItemPage()
+    {
         return view('store_item');
     }
 }
-
-?>

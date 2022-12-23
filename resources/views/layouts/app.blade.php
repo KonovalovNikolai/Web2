@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -12,9 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&family=IM+Fell+DW+Pica+SC&display=swap"
         rel="stylesheet">
 
-     <!-- Иконки -->
+    <!-- Иконки -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -34,7 +35,7 @@
 
     @include('layouts/footer')
 
-    <div id="sign-in-modal" class="modal hidden">
+    {{-- <div id="sign-in-modal" class="modal hidden">
         <div class="modal-content">
             <p class="f32 center">Sign in</p>
             <hr>
@@ -55,14 +56,14 @@
                 <input class="f24 uppercase" type="submit" value="Sign In">
             </form>
         </div>
-    </div>
+    </div> --}}
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let singInButton = document.getElementById("sign-in");
-            let modal = document.getElementById("sign-in-modal");
+        document.addEventListener('DOMContentLoaded', function() {
+            // let singInButton = document.getElementById("sign-in");
+            // let modal = document.getElementById("sign-in-modal");
 
-            window.initModal(modal, singInButton);
+            // window.initModal(modal, singInButton);
 
             let navBar = document.getElementById("nav-bar");
             window.initHeaderFolder(navBar);

@@ -1,12 +1,24 @@
-
 <header>
     <div class="top-bar f14 uppercase">
-        <button id="sign-in">
-            <span class="material-symbols-outlined f16">
-                login
-            </span>
-            Sign in
-        </button>
+        @guest
+            <a href="{{ route('register') }}" class="top-bar-b">Register</a>
+            <a href="{{ route('login') }}" class="top-bar-b">
+                <span class="material-symbols-outlined f16">
+                    login
+                </span>
+                Sign in
+            </a>
+        @else
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+                <button type="submit" class="top-bar-b">
+                    <span class="material-symbols-outlined f16">
+                        logout
+                    </span>
+                    Logout
+                </button>
+            </form>
+        @endguest
         <select>
             <option>en</option>
             <option>ru</option>

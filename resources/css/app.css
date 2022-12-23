@@ -158,8 +158,33 @@ header {
     z-index: 20;
 }
 
-.top-bar>button,
-select {
+.top-bar-b {
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: transparent;
+
+    transition: all 0.5s;
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    padding: 2px 5px;
+
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+}
+
+.top-bar-b:hover,
+select:hover {
+    background-color: var(--primary-color);
+    color: var(--dark);
+}
+
+.top-bar>select {
     border: solid 1px;
     border-radius: 10px;
     background-color: transparent;
@@ -167,21 +192,12 @@ select {
     transition: all 0.5s;
 }
 
-.top-bar button {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-
-    padding: 2px 5px;
-}
-
 .top-bar select option {
     background-color: var(--main-bg-color);
     color: var(--primary-color);
 }
 
-.top-bar>button:hover,
-select:hover {
+.top-bar>select:hover {
     background-color: var(--primary-color);
     color: var(--dark);
 }
@@ -246,7 +262,7 @@ select:hover {
 }
 
 .modal-content {
-    width: 500px;
+    width: 70%;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -256,6 +272,8 @@ select:hover {
     gap: 15px;
 
     border-radius: 3%;
+
+    margin: auto;
 }
 
 .singin-form {
